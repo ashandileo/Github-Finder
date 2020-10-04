@@ -48,7 +48,7 @@ const Home = () => {
         placeholder="Enter github username here . . ."
         onChange={handleChange}
       />
-      {searchResults?.totalCount && (
+      {searchResults?.totalCount >= 0 && (
         <Badge
           containerClass="tw-mt-2">
             {searchResults?.totalCount} Results
