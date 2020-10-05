@@ -5,14 +5,18 @@ const interfaces = {
   className: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   inputContainerClass: PropTypes.string,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  id: PropTypes.string,
+  name: PropTypes.string
 }
 
 const defaultValue = {
   className: '',
   placeholder: 'Placeholder',
   inputContainerClass: '',
-  onChange: () => {}
+  onChange: () => {},
+  id: '',
+  name: ''
 }
 
 const Input = props => {
@@ -20,7 +24,9 @@ const Input = props => {
     className,
     placeholder,
     onChange,
-    inputContainerClass
+    inputContainerClass,
+    id,
+    name
   } = props;
 
   return (
@@ -28,7 +34,9 @@ const Input = props => {
       <input
         className={`${className} tw-border tw-py-2 tw-px-4 tw-rounded`}
         placeholder={placeholder}
-        onChange={onChange} />
+        onChange={onChange}
+        name={name}
+        id={id}/>
     </div>
   )
 }

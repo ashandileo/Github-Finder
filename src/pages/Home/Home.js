@@ -38,7 +38,11 @@ const Home = () => {
     if (!githubUsername) {
       setSearchResults([])
     }
-  }, [githubUsername])
+  }, [githubUsername]);
+
+  useEffect(() => {
+    document.getElementById('input-user').focus();
+  }, []);
 
   return (
     <div className="container">
@@ -47,6 +51,7 @@ const Home = () => {
         className="tw-w-full"
         placeholder="Enter github username here . . ."
         onChange={handleChange}
+        id="input-user"
       />
       {searchResults?.totalCount >= 0 && (
         <Badge
